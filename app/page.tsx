@@ -21,61 +21,63 @@ const HomePage = () => {
         ></div>
 
         <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
             EMPOWERING THE FUTURE OF
-            <br />
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
             <span className="text-red-400">STEM</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-200 max-w-3xl mx-auto px-2">
             Connecting & Inspiring Girls for better
-            <br />
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
             Solutions, Engineering & Making
           </p>
-          <button className="bg-red-400 hover:bg-red-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg">
+          <button className="bg-red-400 hover:bg-red-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-colors shadow-lg">
             Get Started
           </button>
         </div>
       </section>
 
       {/* Bridging Dreams & Discovery Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Bridging Dreams &
                 <br />
                 <span className="text-green-600">& Discovery</span>
               </h2>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 leading-relaxed">
                 Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                 cupidatat non proident.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 order-1 lg:order-2">
+              <div className="space-y-3 sm:space-y-4">
                 <img
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=988&q=80"
                   alt="STEM Education"
-                  className="rounded-lg shadow-md w-full h-48 object-cover"
+                  className="rounded-lg shadow-md w-full h-32 sm:h-40 lg:h-48 object-cover"
                 />
                 <img
                   src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1069&q=80"
                   alt="Girls in STEM"
-                  className="rounded-lg shadow-md w-full h-32 object-cover"
+                  className="rounded-lg shadow-md w-full h-24 sm:h-28 lg:h-32 object-cover"
                 />
               </div>
-              <div className="pt-8">
+              <div className="pt-4 sm:pt-6 lg:pt-8">
                 <img
                   src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                   alt="Technology Learning"
-                  className="rounded-lg shadow-md w-full h-56 object-cover"
+                  className="rounded-lg shadow-md w-full h-40 sm:h-48 lg:h-56 object-cover"
                 />
               </div>
             </div>
@@ -84,18 +86,18 @@ const HomePage = () => {
       </section>
 
       {/* Our Initiatives Section */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white mb-8 sm:mb-12 lg:mb-16">
             Our Initiatives
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Mentorship Circle */}
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg text-center sm:col-span-2 lg:col-span-1">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
                 <svg
-                  className="w-8 h-8 text-purple-600"
+                  className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -106,20 +108,20 @@ const HomePage = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
                 Mentorship Circle
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
             </div>
 
             {/* Coding Workshops */}
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg text-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
                 <svg
-                  className="w-8 h-8 text-blue-600"
+                  className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -130,20 +132,20 @@ const HomePage = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
                 Coding Workshops
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
             </div>
 
             {/* Innovation Club */}
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg text-center sm:col-span-2 lg:col-span-1">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className="w-6 h-6 sm:w-8 sm:h-8 text-green-600"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -154,10 +156,10 @@ const HomePage = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
                 Innovation Club
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
@@ -167,25 +169,27 @@ const HomePage = () => {
       </section>
 
       {/* Ready to Explore STEM Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8">
             Ready to Explore STEM?
           </h2>
-          <button className="bg-red-400 hover:bg-red-500 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg">
+          <button className="bg-red-400 hover:bg-red-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-colors shadow-lg">
             Get Started Today
           </button>
 
           {/* Footer info */}
-          <div className="mt-12 pt-8 border-t border-white/20">
-            <div className="flex flex-wrap justify-center items-center gap-6 text-white/80">
-              <span className="text-sm">© 2024 GWIST Engineering</span>
-              <span className="text-sm">Privacy Policy</span>
-              <span className="text-sm">Terms of Service</span>
+          <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/20">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-6 text-white/80">
+              <span className="text-xs sm:text-sm">
+                © 2024 GWIST Engineering
+              </span>
+              <span className="text-xs sm:text-sm">Privacy Policy</span>
+              <span className="text-xs sm:text-sm">Terms of Service</span>
             </div>
 
             {/* Social icons */}
-            <div className="flex justify-center space-x-4 mt-6">
+            <div className="flex justify-center space-x-3 sm:space-x-4 mt-4 sm:mt-6">
               <a
                 href="#"
                 className="text-white/60 hover:text-white transition-colors"

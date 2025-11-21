@@ -31,19 +31,19 @@ const Navbar = () => {
                 href="/about"
                 className="text-gray-200 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors"
               >
-                About 
+                About
               </a>
               <a
                 href="/events"
                 className="text-gray-200 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors"
               >
-                Features 
+                Features
               </a>
               <a
                 href="/research"
                 className="text-gray-200 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors"
               >
-                Resources 
+                Resources
               </a>
               <a
                 href="/contact"
@@ -96,34 +96,34 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden backdrop-blur-md bg-white/95 border-t border-gray-100">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-4 pt-3 pb-4 space-y-2">
             <a
               href="/about"
-              className="text-gray-200 hover:text-slate-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+              className="text-slate-700 hover:text-slate-900 block px-3 py-3 rounded-md text-base font-medium transition-colors"
             >
               About
             </a>
             <a
               href="/events"
-              className="text-gray-200 hover:text-slate-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+              className="text-slate-700 hover:text-slate-900 block px-3 py-3 rounded-md text-base font-medium transition-colors"
             >
               Features
             </a>
             <a
               href="/research"
-              className="text-gray-200 hover:text-slate-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+              className="text-slate-700 hover:text-slate-900 block px-3 py-3 rounded-md text-base font-medium transition-colors"
             >
               Resources
             </a>
             <a
               href="/contact"
-              className="text-gray-200 hover:text-slate-900 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+              className="text-slate-700 hover:text-slate-900 block px-3 py-3 rounded-md text-base font-medium transition-colors"
             >
               Contact
             </a>
             <a
               href="#"
-              className="bg-red-400 hover:bg-red-500 text-white block px-3 py-2 rounded-md text-base font-semibold transition-colors mx-3 mt-4"
+              className="bg-red-400 hover:bg-red-500 text-white block px-3 py-3 rounded-md text-base font-semibold transition-colors mx-3 mt-4 text-center"
             >
               See how it works
             </a>
