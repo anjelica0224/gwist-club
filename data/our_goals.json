@@ -1,0 +1,20 @@
+{
+  "goals": [
+    {
+      "title": "Technical Workshops",
+      "description": "Regular fortnightly educational sessions covering diverse topics including hands-on coding bootcamps, personal branding strategies for tech professionals, emerging FinTech innovations, and cutting-edge Machine Learning with Computer Vision applications"
+    },
+    {
+      "title": "Mentorship & Talks",
+      "description": "Monthly speaker series featuring accomplished women leaders from various tech industries who share their journey, provide career guidance, and offer valuable networking opportunities to inspire the next generation"
+    },
+    {
+      "title": "Flagship Events",
+      "description": "Bi-annual large-scale events designed to raise campus-wide awareness about gender diversity challenges, showcase women's achievements in STEM fields, and actively work toward improving gender representation in technology sectors"
+    },
+    {
+      "title": "Community Building",
+      "description": "Fostering an inclusive environment that encourages greater participation of women students at Plaksha University in technology initiatives, research projects, and building stronger connections within the broader tech community"
+    }
+  ]
+}
