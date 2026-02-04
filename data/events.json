@@ -1,0 +1,92 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Coding Bootcamp: Python Fundamentals",
+      "date": "Feb 15, 2026",
+      "time": "10:00 AM - 2:00 PM",
+      "location": "2101, Havells Building",
+      "description": "Hands-on workshop covering Python basics, data structures, and practical applications. Perfect for beginners ready to dive into programming.",
+      "category": "workshop",
+
+      "highlight": false
+    },
+    {
+      "id": 2,
+      "title": "Building Your Personal Brand in Tech",
+      "date": "Feb 22, 2026",
+      "time": "3:00 PM - 5:00 PM",
+      "location": "Main Auditorium",
+      "description": "Learn strategies to establish your online presence, craft your narrative, and stand out in the competitive tech industry.",
+      "category": "workshop",
+
+      "highlight": false
+    },
+    {
+      "id": 3,
+      "title": "Women in AI: A Fireside Chat",
+      "date": "Mar 5, 2026",
+      "time": "6:00 PM - 7:30 PM",
+      "location": "Virtual Event",
+      "description": "Join us for an inspiring conversation with leading women in artificial intelligence and machine learning about their journeys and insights.",
+      "category": "talk",
+      "attendees": 120,
+      "highlight": true
+    },
+    {
+      "id": 4,
+      "title": "FinTech Innovation Workshop",
+      "date": "Mar 12, 2026",
+      "time": "2:00 PM - 6:00 PM",
+      "location": "Innovation Hub",
+      "description": "Explore the intersection of finance and technology. From blockchain to digital payments, discover what's shaping the future of money.",
+      "category": "workshop",
+
+      "highlight": false
+    },
+    {
+      "id": 5,
+      "title": "Annual GWiST Summit 2026",
+      "date": "Apr 10, 2026",
+      "time": "9:00 AM - 6:00 PM",
+      "location": "Plaksha Campus",
+      "description": "Our flagship event celebrating women in STEM with keynotes, panels, networking sessions, and a showcase of groundbreaking student projects.",
+      "category": "flagship",
+
+      "highlight": true
+    },
+    {
+      "id": 6,
+      "title": "ML + Computer Vision Deep Dive",
+      "date": "Mar 28, 2026",
+      "time": "11:00 AM - 3:00 PM",
+      "location": "CS Building, Lab 204",
+      "description": "Advanced workshop on machine learning applications in computer vision. Build real-world projects and learn from industry practitioners.",
+      "category": "workshop",
+
+      "highlight": false
+    },
+    {
+      "id": 7,
+      "title": "Tech Career Fair & Networking Mixer",
+      "date": "Apr 5, 2026",
+      "time": "4:00 PM - 8:00 PM",
+      "location": "Student Center",
+      "description": "Connect with recruiters, alumni, and fellow students. Practice your pitch, explore opportunities, and expand your professional network.",
+      "category": "networking",
+
+      "highlight": false
+    },
+    {
+      "id": 8,
+      "title": "Design Thinking for Engineers",
+      "date": "Mar 18, 2026",
+      "time": "1:00 PM - 5:00 PM",
+      "location": "Design Lab",
+      "description": "Learn human-centered design principles and apply them to technical problem-solving. A hands-on workshop for creative engineers.",
+      "category": "workshop",
+
+      "highlight": false
+    }
+  ]
+}
