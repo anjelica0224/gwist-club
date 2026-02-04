@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Navbar from "../../components/navbar";
 import Footer from "@/components/footer";
-import { Calendar, MapPin, Clock, Users, ArrowRight, Sparkles } from "lucide-react";
+import { Calendar, MapPin, Clock, Users, Sparkles } from "lucide-react";
 import eventsData from "@/data/events.json";
 
 interface Event {
@@ -16,14 +16,16 @@ interface Event {
   category: "workshop" | "talk" | "flagship" | "networking";
   attendees?: number;
   highlight?: boolean;
+  imagePath?: string;
+  registrationLink?: string;
 }
 
-// Default images for each category
+// Fallback images for each category if no imagePath is provided
 const categoryImages = {
-  workshop: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop",
-  talk: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop",
-  flagship: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
-  networking: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop",
+  workshop: "/images/events/workshop-default.jpg",
+  talk: "/images/events/talk-default.jpg",
+  flagship: "/images/events/flagship-default.jpg",
+  networking: "/images/events/networking-default.jpg",
 };
 
 export default function EventsPage() {
@@ -37,40 +39,37 @@ export default function EventsPage() {
       : events.filter((event) => event.category === filter);
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-[#f5f1eb]">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-        {/* Animated Background Shapes */}
+      <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 md:w-[600px] md:h-[600px] bg-teal-700 opacity-[0.07] rounded-full blur-3xl animate-pulse" />
-          <div className="absolute -bottom-32 -left-32 w-80 h-80 md:w-[500px] md:h-[500px] bg-gray-800 opacity-[0.05] rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-[300px] md:h-[300px] bg-amber-200 opacity-[0.04] rounded-full blur-2xl" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#0d6d6e] opacity-[0.07] rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-[#2E3538] opacity-[0.05] rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#D6C3A9] opacity-[0.04] rounded-full blur-2xl" />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/80 backdrop-blur-sm rounded-full mb-4 sm:mb-6 border border-teal-700/20">
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-teal-700" />
-              <span className="text-xs sm:text-sm font-medium text-gray-700">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full mb-6 border border-[#0d6d6e]/20">
+              <Sparkles className="w-4 h-4 text-[#0d6d6e]" />
+              <span className="text-sm font-medium text-gray-700">
                 Upcoming Events & Workshops
               </span>
             </div>
             
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-gray-800 mb-4 sm:mb-6 leading-tight">
+            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-light text-[#2E3538] mb-6 leading-tight">
               Let's Learn,
               <br />
-              <span className="italic text-teal-700">Grow & Connect</span>
+              <span className="italic text-[#0d6d6e]">Grow & Connect</span>
             </h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-3xl">
+            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl">
               Workshops, talks, and experiences designed to empower the next
               generation of women leaders in tech.
             </p>
 
-            {/* Filter Pills */}
-            <div className="flex flex-wrap gap-2 sm:gap-3">
+            <div className="flex flex-wrap gap-3">
               {[
                 { key: "all", label: "All"},
                 { key: "workshop", label: "Workshops"},
@@ -81,9 +80,9 @@ export default function EventsPage() {
                 <button
                   key={key}
                   onClick={() => setFilter(key)}
-                  className={`px-4 py-2 sm:px-6 sm:py-3 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                  className={`group px-4 py-2 rounded-3xl text-sm font-semibold transition-all duration-300 ${
                     filter === key
-                      ? "bg-teal-700 text-white shadow-lg"
+                      ? "bg-[#0d6d6e] text-white shadow-lg"
                       : "bg-white/60 backdrop-blur-sm text-gray-700 hover:bg-white hover:shadow-md border border-gray-200/50"
                   }`}
                 >
@@ -95,62 +94,58 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Events Grid - Uniform Layout */}
-      <section className="pb-16 sm:pb-24">
-        <div className="container mx-auto px-4 sm:px-6">
+      <section className="pb-24">
+        <div className="container mx-auto px-6">
           {filteredEvents.length === 0 ? (
-            <div className="text-center py-20 sm:py-32">
-              <div className="text-5xl sm:text-6xl mb-4">🔍</div>
-              <p className="text-xl sm:text-2xl text-gray-500 font-light">
+            <div className="text-center py-32">
+              <div className="text-6xl mb-4">🔍</div>
+              <p className="text-2xl text-gray-500 font-light">
                 No events match this filter
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredEvents.map((event) => {
+                const imageSrc = event.imagePath || categoryImages[event.category];
+                const registrationUrl = event.registrationLink || "#";
+                
                 return (
                   <div
                     key={event.id}
                     className="group relative h-full"
                   >
-                    <div className="relative bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-                      {/* Image Header - Fixed Height */}
-                      <div className="relative h-48 sm:h-56 overflow-hidden flex-shrink-0">
+                    <div className="relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
+                      <div className="relative h-48 overflow-hidden flex-shrink-0">
                         <img 
-                          src={categoryImages[event.category]} 
-                          alt={event.category}
+                          src={imageSrc} 
+                          alt={event.title}
                           className="w-full h-full object-cover"
                         />
                         
-                        {/* Dark overlay for better text readability */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-                        {/* Category Badge - Text only */}
-                        <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
-                          <span className="text-white text-xs sm:text-sm font-bold uppercase tracking-wider select-none drop-shadow-lg">
+                        <div className="absolute top-4 left-4">
+                          <span className="text-white text-xs font-bold uppercase tracking-wider select-none drop-shadow-lg">
                             {event.category}
                           </span>
                         </div>
 
-                        {/* Event Title */}
-                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-                          <h3 className="font-serif text-xl sm:text-2xl font-bold text-white leading-tight line-clamp-2">
+                        <div className="absolute bottom-0 left-0 right-0 p-6">
+                          <h3 className="font-serif text-2xl font-bold text-white leading-tight line-clamp-2">
                             {event.title}
                           </h3>
                         </div>
                       </div>
 
-                      {/* Content - Flexible Height */}
-                      <div className="p-4 sm:p-6 flex flex-col flex-grow">
-                        <p className="text-gray-700 text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-3">
+                      <div className="p-6 flex flex-col grow">
+                        <p className="text-gray-700 text-sm leading-relaxed mb-6 line-clamp-3">
                           {event.description}
                         </p>
 
-                        {/* Event Details */}
-                        <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-                          <div className="flex items-center gap-2 sm:gap-3">
-                            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-neutral-100 flex items-center justify-center flex-shrink-0">
-                              <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-700" />
+                        <div className="space-y-3 mb-6">
+                          <div className="flex items-center gap-3">
+                            <div className="w-9 h-9 rounded-full bg-[#f5f1eb] flex items-center justify-center shrink-0">
+                              <Calendar className="w-4 h-4 text-[#0d6d6e]" />
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="text-xs text-gray-500 uppercase tracking-wide">Date</div>
@@ -158,9 +153,9 @@ export default function EventsPage() {
                             </div>
                           </div>
 
-                          <div className="flex items-center gap-2 sm:gap-3">
-                            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-neutral-100 flex items-center justify-center flex-shrink-0">
-                              <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-700" />
+                          <div className="flex items-center gap-3">
+                            <div className="w-9 h-9 rounded-full bg-[#f5f1eb] flex items-center justify-center shrink-0">
+                              <Clock className="w-4 h-4 text-[#0d6d6e]" />
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="text-xs text-gray-500 uppercase tracking-wide">Time</div>
@@ -168,9 +163,9 @@ export default function EventsPage() {
                             </div>
                           </div>
 
-                          <div className="flex items-center gap-2 sm:gap-3">
-                            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-neutral-100 flex items-center justify-center flex-shrink-0">
-                              <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-700" />
+                          <div className="flex items-center gap-3">
+                            <div className="w-9 h-9 rounded-full bg-[#f5f1eb] flex items-center justify-center shrink-0">
+                              <MapPin className="w-4 h-4 text-[#0d6d6e]" />
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="text-xs text-gray-500 uppercase tracking-wide">Location</div>
@@ -179,9 +174,9 @@ export default function EventsPage() {
                           </div>
 
                           {event.attendees && (
-                            <div className="flex items-center gap-2 sm:gap-3">
-                              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-neutral-100 flex items-center justify-center flex-shrink-0">
-                                <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-700" />
+                            <div className="flex items-center gap-3">
+                              <div className="w-9 h-9 rounded-full bg-[#f5f1eb] flex items-center justify-center shrink-0">
+                                <Users className="w-4 h-4 text-[#0d6d6e]" />
                               </div>
                               <div className="flex-1 min-w-0">
                                 <div className="text-xs text-gray-500 uppercase tracking-wide">Attending</div>
@@ -191,14 +186,15 @@ export default function EventsPage() {
                           )}
                         </div>
 
-                        {/* CTA Button - Text only with underline animation */}
-                        <button className="w-full py-3 sm:py-3.5 px-4 sm:px-6 font-semibold flex items-center justify-center group mt-auto text-sm sm:text-base text-gray-900">
+                        <a 
+                          href={registrationUrl}
+                          className="w-full text-[#2E3538] hover:text-[#0d6d6e] py-3.5 px-6 font-semibold flex items-center justify-center group mt-auto transition-colors duration-300"
+                        >
                           <span className="relative inline-flex items-center">
                             Register Now
-                            <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-                            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-teal-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#0d6d6e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                           </span>
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -209,47 +205,46 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 sm:py-32 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 relative overflow-hidden">
-        {/* Animated Background */}
+      <section className="py-32 bg-gradient-to-br from-[#2E3538] via-[#1E2528] to-[#2E3538] relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-teal-700 opacity-20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-amber-200 opacity-10 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0d6d6e] opacity-20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#D6C3A9] opacity-10 rounded-full blur-3xl" />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6 sm:mb-8 border border-white/20">
-              <span className="text-xs sm:text-sm font-medium text-white/90">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-8 border border-white/20">
+              <Sparkles className="w-4 h-4 text-[#D6C3A9]" />
+              <span className="text-sm font-medium text-white/90">
                 Join Our Community
               </span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white mb-6 sm:mb-8 leading-tight">
+            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light text-white mb-8 leading-tight">
               Ready to make
               <br />
-              <span className="italic text-amber-50">your mark?</span>
+              <span className="italic text-[#D6C3A9]">your mark?</span>
             </h2>
             
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
               Don't just attend events—be part of a movement shaping the future
               of women in technology.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="group inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 text-white rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all duration-300"
+                className="group inline-flex items-center justify-center px-10 py-5 text-white hover:text-[#D6C3A9] rounded-2xl font-bold text-lg transition-colors duration-300"
               >
                 <span className="relative inline-flex items-center">
                   Get in Touch
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </span>
               </a>
               
               <a
                 href="/about"
-                className="group inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 text-white rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all duration-300"
+                className="group inline-flex items-center justify-center px-10 py-5 text-white hover:text-[#D6C3A9] rounded-2xl font-bold text-lg transition-colors duration-300"
               >
                 <span className="relative inline-flex items-center">
                   Our Story
