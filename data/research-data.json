@@ -10,7 +10,7 @@
       "Predictive analytics for career pathways"
     ],
     "imageUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
-    "link": "/research/ai-mentorship",
+    "link": "research/ai-mentorship",
     "detailPage": {
       "overview": "Our AI-Powered Mentorship Platform leverages cutting-edge machine learning and natural language processing to create meaningful connections between aspiring women technologists and experienced mentors. By analyzing career trajectories, skill sets, and personal goals, we ensure each match has the highest potential for mutual growth and success.",
       "timeline": "Launched Q2 2024",
@@ -29,7 +29,7 @@
       "Community engagement metrics"
     ],
     "imageUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
-    "link": "/research/digital-storytelling",
+    "link": "research/digital-storytelling",
     "detailPage": {
       "overview": "Digital Storytelling for Impact transforms how women in STEM share their journeys. Through multimedia narratives, podcasts, and interactive web experiences, we create compelling content that resonates with diverse audiences and inspires the next generation of women technologists.",
       "timeline": "Launched Q3 2023",
@@ -48,7 +48,7 @@
       "Adaptive interface technologies"
     ],
     "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-    "link": "/research/inclusive-tech",
+    "link": "research/inclusive-tech",
     "detailPage": {
       "overview": "The Inclusive Tech Design Lab focuses on creating technology that works for everyone, regardless of their location, connectivity, or physical abilities. We build tools and platforms that ensure women from all backgrounds can access quality STEM education and career opportunities.",
       "timeline": "Launched Q1 2024",
